@@ -130,18 +130,18 @@ const formatDate = (dateString) => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(15, 23, 42, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2000;
-  padding: 1rem;
+  padding: var(--space-4);
 }
 
 .modal-container {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  background: var(--surface);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-modal);
   max-width: 700px;
   width: 100%;
   max-height: 90vh;
@@ -154,59 +154,58 @@ const formatDate = (dateString) => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem;
-  border-bottom: 1px solid #e2e8f0;
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--rule);
 }
 
 .modal-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #0f172a;
-  letter-spacing: -0.025em;
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--ink);
 }
 
 .close-button {
   background: none;
   border: none;
-  color: #64748b;
+  color: var(--muted);
   cursor: pointer;
-  padding: 0.5rem;
+  padding: var(--space-2);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
-  transition: all 0.15s ease;
+  border-radius: var(--radius-control);
+  transition: background-color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
 }
 
 .close-button:hover {
-  background: #f1f5f9;
-  color: #0f172a;
+  background: var(--surface-sunken);
+  color: var(--ink);
 }
 
 .modal-body {
   flex: 1;
   overflow-y: auto;
-  padding: 2rem;
+  padding: var(--space-8);
 }
 
 .shortage-header {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #e2e8f0;
-  margin-bottom: 1.5rem;
+  gap: var(--space-5);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: var(--space-6);
 }
 
 .shortage-icon {
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-  border-radius: 12px;
+  background: var(--alert);
+  border-radius: var(--radius-panel);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--surface);
   flex-shrink: 0;
 }
 
@@ -216,145 +215,144 @@ const formatDate = (dateString) => {
 }
 
 .item-name {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin: 0 0 0.5rem 0;
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 var(--space-2) 0;
 }
 
 .item-sku {
-  font-size: 0.875rem;
-  color: #64748b;
+  font-size: var(--text-base);
+  color: var(--muted);
   font-family: 'Monaco', 'Courier New', monospace;
 }
 
 .priority-badge {
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-size: 0.875rem;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-control);
+  font-size: var(--text-base);
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.025em;
   flex-shrink: 0;
 }
 
 .priority-badge.high {
-  background: #fecaca;
-  color: #991b1b;
+  background: var(--alert-tint);
+  color: var(--alert);
 }
 
 .priority-badge.medium {
-  background: #fed7aa;
-  color: #92400e;
+  background: var(--warn-tint);
+  color: var(--warn);
 }
 
 .priority-badge.low {
-  background: #dbeafe;
-  color: #1e40af;
+  background: var(--cobalt-tint);
+  color: var(--cobalt-hover);
 }
 
 .shortage-summary {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
 }
 
 .summary-card {
-  padding: 1.25rem;
-  border-radius: 10px;
+  padding: var(--space-5);
+  border-radius: var(--radius-panel);
   border: 2px solid;
 }
 
 .summary-card.danger {
-  border-color: #fecaca;
-  background: #fef2f2;
+  border-color: var(--alert-tint);
+  background: var(--alert-tint);
 }
 
 .summary-card.warning {
-  border-color: #fed7aa;
-  background: #fffbeb;
+  border-color: var(--warn-tint);
+  background: var(--warn-tint);
 }
 
 .summary-label {
-  font-size: 0.813rem;
+  font-size: var(--text-sm);
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #64748b;
-  margin-bottom: 0.5rem;
+  color: var(--muted);
+  margin-bottom: var(--space-2);
 }
 
 .summary-value {
+  font-variant-numeric: tabular-nums;
   font-size: 1.875rem;
-  font-weight: 700;
-  color: #0f172a;
+  font-weight: 600;
+  color: var(--ink);
 }
 
 .summary-card.danger .summary-value {
-  color: #dc2626;
+  font-variant-numeric: tabular-nums;
+  color: var(--alert);
 }
 
 .summary-card.warning .summary-value {
-  color: #f59e0b;
+  font-variant-numeric: tabular-nums;
+  color: var(--warn);
 }
 
 .info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
+  gap: var(--space-6);
 }
 
 .info-item {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .info-label {
-  font-size: 0.813rem;
+  font-size: var(--text-sm);
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #64748b;
+  color: var(--muted);
 }
 
 .info-value {
-  font-size: 0.938rem;
-  color: #0f172a;
+  font-variant-numeric: tabular-nums;
+  font-size: var(--text-base);
+  color: var(--ink);
   font-weight: 500;
 }
 
 .info-value.order-id,
 .info-value.sku {
+  font-variant-numeric: tabular-nums;
   font-family: 'Monaco', 'Courier New', monospace;
-  color: #2563eb;
+  color: var(--cobalt);
 }
 
 .modal-footer {
-  padding: 1.5rem;
-  border-top: 1px solid #e2e8f0;
+  padding: var(--space-6);
+  border-top: 1px solid var(--rule);
   display: flex;
   justify-content: flex-end;
-  gap: 0.75rem;
+  gap: var(--space-3);
 }
 
 .btn-secondary {
-  padding: 0.625rem 1.25rem;
-  background: #f1f5f9;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  padding: var(--space-3) var(--space-5);
+  background: var(--surface-sunken);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-panel);
   font-weight: 500;
-  font-size: 0.875rem;
-  color: #334155;
+  font-size: var(--text-base);
+  color: var(--ink-2);
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: background-color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
   font-family: inherit;
 }
 
 .btn-secondary:hover {
-  background: #e2e8f0;
-  border-color: #cbd5e1;
+  background: var(--rule);
+  border-color: var(--rule);
 }
 
 /* Modal transition animations */

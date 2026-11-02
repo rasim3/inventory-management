@@ -322,21 +322,20 @@ export default {
 }
 
 .card {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: var(--surface);
+  border-radius: var(--radius-panel);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
 }
 
 .card-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-6);
 }
 
 .card-title {
-  font-size: 1.25rem;
+  font-size: var(--text-lg);
   font-weight: 600;
-  color: #0f172a;
+  color: var(--ink);
   margin: 0;
 }
 
@@ -346,25 +345,25 @@ export default {
 }
 
 .reports-table th {
-  background: #f8fafc;
-  padding: 0.75rem;
+  background: var(--paper);
+  padding: var(--space-3);
   text-align: left;
   font-weight: 600;
-  color: #64748b;
-  border-bottom: 2px solid #e2e8f0;
+  color: var(--muted);
+  border-bottom: 2px solid var(--rule);
 }
 
 .reports-table td {
-  padding: 0.75rem;
-  border-bottom: 1px solid #e2e8f0;
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--rule);
 }
 
 .reports-table tr:hover {
-  background: #f8fafc;
+  background: var(--paper);
 }
 
 .chart-container {
-  padding: 2rem 1rem;
+  padding: var(--space-8) var(--space-4);
   min-height: 300px;
 }
 
@@ -373,7 +372,7 @@ export default {
   align-items: flex-end;
   justify-content: space-around;
   height: 250px;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .bar-wrapper {
@@ -393,96 +392,105 @@ export default {
 
 .bar {
   width: 100%;
-  background: linear-gradient(to top, #3b82f6, #60a5fa);
-  border-radius: 4px 4px 0 0;
-  transition: all 0.3s;
+  background: var(--cobalt);
+  border-radius: var(--radius-sm) 4px 0 0;
+  transition: background-color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
   cursor: pointer;
 }
 
 .bar:hover {
-  background: linear-gradient(to top, #2563eb, #3b82f6);
+  background: var(--cobalt);
 }
 
 .bar-label {
-  margin-top: 0.5rem;
-  font-size: 0.75rem;
-  color: #64748b;
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--muted);
   text-align: center;
   transform: rotate(-45deg);
   white-space: nowrap;
-  margin-top: 1.5rem;
+  margin-top: var(--space-6);
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
 }
 
 .stat-card {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #3b82f6;
+  background: var(--surface);
+  border-radius: var(--radius-panel);
+  padding: var(--space-6);
+  border-left: 4px solid var(--cobalt);
 }
 
 .stat-label {
-  font-size: 0.875rem;
-  color: #64748b;
-  margin-bottom: 0.5rem;
+  font-size: var(--text-base);
+  color: var(--muted);
+  margin-bottom: var(--space-2);
 }
 
 .stat-value {
+  font-variant-numeric: tabular-nums;
   font-size: 1.875rem;
-  font-weight: 700;
-  color: #0f172a;
+  font-weight: 600;
+  color: var(--ink);
 }
 
 .badge {
-  padding: 0.25rem 0.75rem;
+  padding: var(--space-1) var(--space-3);
   border-radius: 9999px;
-  font-size: 0.875rem;
+  font-size: var(--text-base);
   font-weight: 500;
 }
 
 .badge.success {
-  background: #dcfce7;
-  color: #166534;
+  background: var(--ok-tint);
+  color: var(--ok);
 }
 
 .badge.warning {
-  background: #fef3c7;
-  color: #92400e;
+  background: var(--warn-tint);
+  color: var(--warn);
 }
 
 .badge.danger {
-  background: #fee2e2;
-  color: #991b1b;
+  background: var(--alert-tint);
+  color: var(--alert);
 }
 
 .positive-change {
-  color: #16a34a;
+  color: var(--ok);
   font-weight: 600;
 }
 
 .negative-change {
-  color: #dc2626;
+  color: var(--alert);
   font-weight: 600;
 }
 
 .loading {
   text-align: center;
-  padding: 3rem;
-  color: #64748b;
+  padding: var(--space-12);
+  color: var(--muted);
 }
 
 .error {
-  background: #fee2e2;
-  color: #991b1b;
-  padding: 1rem;
-  border-radius: 8px;
-  margin: 1rem 0;
+  background: var(--alert-tint);
+  color: var(--alert);
+  padding: var(--space-4);
+  border-radius: var(--radius-panel);
+  margin: var(--space-4) 0;
+}
+
+@media (max-width: 640px) {
+  .chart-container {
+    overflow-x: auto;
+  }
+  .bar-chart {
+    min-width: 640px;
+  }
 }
 </style>
